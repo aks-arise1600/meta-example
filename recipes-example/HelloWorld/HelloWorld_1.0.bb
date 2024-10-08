@@ -5,14 +5,17 @@
 
 DESCRIPTION = "Example Hello, World application for Yocto build."
 SECTION = "examples"
-DEPENDS = ""
+DEPENDS += "glibc"
+RDEPENDS_${PN} = "glibc"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=46227ceff2b266fb3604c74f56b07c0e"
+
+#BB_STRICT_CHECKSUM = "0"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
 
 SRCREV = "16ea9f2b7d68c91aeeb98cee3062b0b30b2d3d2d"
-SRC_URI = "git://github.com/aks-arise1600/YoctoExampleApp.git"
+SRC_URI = "git://github.com/aks-arise1600/YoctoExampleApp.git;branch=main;protocol=https"
 
 S = "${WORKDIR}/git"
 
